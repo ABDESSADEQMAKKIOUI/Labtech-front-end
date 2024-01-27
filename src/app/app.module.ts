@@ -26,7 +26,6 @@ import { UpdateNormeComponent } from './components/norme/update-norme/update-nor
 import { AddNumerationComponent } from './components/numeration/add-numeration/add-numeration.component';
 import { UpdateNumerationComponent } from './components/numeration/update-numeration/update-numeration.component';
 import { NumerationDetailsComponent } from './components/numeration/numeration-details/numeration-details.component';
-import { NumerationsComponent } from './components/numeration/numerations/numerations.component';
 import { PatientsComponent } from './components/patient/patients/patients.component';
 import { PatientDetailsComponent } from './components/patient/patient-details/patient-details.component';
 import { AddPatientComponent } from './components/patient/add-patient/add-patient.component';
@@ -63,7 +62,6 @@ import { UpdateUtilisateurComponent } from './components/utilisateur/update-util
     AddNumerationComponent,
     UpdateNumerationComponent,
     NumerationDetailsComponent,
-    NumerationsComponent,
     PatientsComponent,
     PatientDetailsComponent,
     AddPatientComponent,
