@@ -35,6 +35,9 @@ import { UtilisateursComponent } from './components/utilisateur/utilisateurs/uti
 import { UtilisateurDetailsComponent } from './components/utilisateur/utilisateur-details/utilisateur-details.component';
 import { AddUtilisateurComponent } from './components/utilisateur/add-utilisateur/add-utilisateur.component';
 import { UpdateUtilisateurComponent } from './components/utilisateur/update-utilisateur/update-utilisateur.component';
+import { ReactifsComponent } from './components/reactif/reactifs/reactifs.component';
+import { UpdateReactifComponent } from './components/reactif/update-reactif/update-reactif.component';
+import { ReactifDetailComponent } from './components/reactif/reactif-detail/reactif-detail.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +73,10 @@ import { UpdateUtilisateurComponent } from './components/utilisateur/update-util
     UtilisateursComponent,
     UtilisateurDetailsComponent,
     AddUtilisateurComponent,
-    UpdateUtilisateurComponent
+    UpdateUtilisateurComponent,
+    ReactifsComponent,
+    UpdateReactifComponent,
+    ReactifDetailComponent
   ],
   imports: [
     BrowserModule,

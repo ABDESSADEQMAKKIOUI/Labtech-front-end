@@ -32,6 +32,9 @@ import {UtilisateursComponent} from "./components/utilisateur/utilisateurs/utili
 import {UtilisateurDetailsComponent} from "./components/utilisateur/utilisateur-details/utilisateur-details.component";
 import {AddUtilisateurComponent} from "./components/utilisateur/add-utilisateur/add-utilisateur.component";
 import {UpdateUtilisateurComponent} from "./components/utilisateur/update-utilisateur/update-utilisateur.component";
+import {UpdateReactifComponent} from "./components/reactif/update-reactif/update-reactif.component";
+import {ReactifDetailComponent} from "./components/reactif/reactif-detail/reactif-detail.component";
+import {ReactifsComponent} from "./components/reactif/reactifs/reactifs.component";
 
 const routes: Routes = [{ path: 'analyses', component: AnalysesComponent },
   { path: 'analyseDetail', component: AnalyseDetailComponent },
@@ -64,7 +67,10 @@ const routes: Routes = [{ path: 'analyses', component: AnalysesComponent },
   { path: 'utilisateurs', component: UtilisateursComponent },
   { path: 'utilisateurDetail', component: UtilisateurDetailsComponent },
   { path: 'addUtilisateur', component: AddUtilisateurComponent },
-  { path: 'updateUtilisateur', component: UpdateUtilisateurComponent }];
+  { path: 'updateUtilisateur', component: UpdateUtilisateurComponent },
+  { path: 'updateReactif', component: UpdateReactifComponent },
+  { path: 'reactifDetail', component: ReactifDetailComponent },
+  { path: 'reactifs', component: ReactifsComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
