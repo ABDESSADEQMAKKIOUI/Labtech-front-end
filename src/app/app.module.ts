@@ -38,6 +38,7 @@ import { UpdateUtilisateurComponent } from './components/utilisateur/update-util
 import { ReactifsComponent } from './components/reactif/reactifs/reactifs.component';
 import { UpdateReactifComponent } from './components/reactif/update-reactif/update-reactif.component';
 import { ReactifDetailComponent } from './components/reactif/reactif-detail/reactif-detail.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -78,10 +79,11 @@ import { ReactifDetailComponent } from './components/reactif/reactif-detail/reac
     UpdateReactifComponent,
     ReactifDetailComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

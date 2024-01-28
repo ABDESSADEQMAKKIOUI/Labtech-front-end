@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Fournisseur} from "../../entities/fournisseur/fournisseur";
+import {NgForm} from "@angular/forms";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class FournisseurService {
     return this.http.get<Fournisseur>(`${this.apiUrl}/${id}`);
   }
 
-  addFournisseur(fournisseurDTO: Fournisseur): Observable<Fournisseur> {
+    addFournisseur(fournisseurDTO: NgForm): Observable<Fournisseur> {
     return this.http.post<Fournisseur>(this.apiUrl, fournisseurDTO);
   }
 
