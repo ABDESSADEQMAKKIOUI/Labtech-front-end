@@ -23,7 +23,6 @@ import {UpdateMaterialComponent} from "./components/material/update-material/upd
 import {NormesComponent} from "./components/norme/normes/normes.component";
 import {NormeDetailsComponent} from "./components/norme/norme-details/norme-details.component";
 import {AddNormeComponent} from "./components/norme/add-norme/add-norme.component";
-import {UpdateNormeComponent} from "./components/norme/update-norme/update-norme.component";
 import {NumerationDetailsComponent} from "./components/numeration/numeration-details/numeration-details.component";
 import {AddNumerationComponent} from "./components/numeration/add-numeration/add-numeration.component";
 import {UpdateNumerationComponent} from "./components/numeration/update-numeration/update-numeration.component";
@@ -35,6 +34,7 @@ import {UpdateUtilisateurComponent} from "./components/utilisateur/update-utilis
 import {UpdateReactifComponent} from "./components/reactif/update-reactif/update-reactif.component";
 import {ReactifDetailComponent} from "./components/reactif/reactif-detail/reactif-detail.component";
 import {ReactifsComponent} from "./components/reactif/reactifs/reactifs.component";
+import {CommonModule} from "@angular/common";
 
 const routes: Routes = [{ path: 'analyses', component: AnalysesComponent },
   { path: 'analyseDetail', component: AnalyseDetailComponent },
@@ -59,7 +59,6 @@ const routes: Routes = [{ path: 'analyses', component: AnalysesComponent },
   { path: 'normes', component: NormesComponent },
   { path: 'normeDetail', component: NormeDetailsComponent },
   { path: 'addNorme', component: AddNormeComponent },
-  { path: 'updateNorme', component: UpdateNormeComponent },
   { path: 'numerationDetail', component: NumerationDetailsComponent },
   { path: 'addNumeration', component: AddNumerationComponent },
   { path: 'updateNumeration', component: UpdateNumerationComponent },
@@ -73,7 +72,7 @@ const routes: Routes = [{ path: 'analyses', component: AnalysesComponent },
   { path: 'reactifs', component: ReactifsComponent }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [CommonModule,RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -22,7 +22,6 @@ import { MaterialDetailComponent } from './components/material/material-detail/m
 import { NormesComponent } from './components/norme/normes/normes.component';
 import { NormeDetailsComponent } from './components/norme/norme-details/norme-details.component';
 import { AddNormeComponent } from './components/norme/add-norme/add-norme.component';
-import { UpdateNormeComponent } from './components/norme/update-norme/update-norme.component';
 import { AddNumerationComponent } from './components/numeration/add-numeration/add-numeration.component';
 import { UpdateNumerationComponent } from './components/numeration/update-numeration/update-numeration.component';
 import { NumerationDetailsComponent } from './components/numeration/numeration-details/numeration-details.component';
@@ -62,7 +61,6 @@ import {FormsModule} from "@angular/forms";
     NormesComponent,
     NormeDetailsComponent,
     AddNormeComponent,
-    UpdateNormeComponent,
     AddNumerationComponent,
     UpdateNumerationComponent,
     NumerationDetailsComponent,
