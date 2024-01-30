@@ -26,7 +26,7 @@
               <tr>
                 <th>Name</th>
                 <th>Penom</th>
-                <th>Email</th>
+                <th>date de naissance</th>
                 <th>Tele</th>
                 <th>Adress</th>
                 <th>Show detail</th>
@@ -35,11 +35,12 @@
               </thead>
               <tbody>
               <tr>
-                <td>Airi Satou</td>
-                <td>2008/11/28<br><br></td>
-                <td>2008/11/28</td>
-                <td>commentair</td>
-                <td>Cell 5</td>
+              <tr *ngFor="let patient of patients">
+                <td>{{ patient.nom }}</td>
+                <td>{{patient.prenom }}</td>
+                <td>{{ patient.dateNaissance}}</td>
+                <td>{{ patient.tel }}</td>
+                <td>{{ patient.adresse }}</td>
                 <td><button class="btn btn-primary" type="button">Detaille</button></td>
                 <td>
                   <div class="btn-group"><button class="btn btn-primary" type="button">Action</button><button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" type="button"></button>
@@ -48,17 +49,8 @@
                 </td>
               </tr>
               <tr>
-                <td>Angelica&nbsp;</td>
-                <td>2008/11/28</td>
-                <td>2008/11/28<br><br></td>
-                <td>commentair<br><br></td>
-                <td>Cell 5</td>
-                <td><button class="btn btn-primary" type="button">Detaille</button></td>
-                <td>
-                  <div class="btn-group"><button class="btn btn-primary" type="button">Action</button><button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" type="button"></button>
-                    <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-                  </div><br><br><br>
-                </td>
+
+
               </tr>
               <tr></tr>
               <tr></tr>

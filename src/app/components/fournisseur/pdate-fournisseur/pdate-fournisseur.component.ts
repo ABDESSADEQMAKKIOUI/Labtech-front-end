@@ -20,8 +20,8 @@ export class PdateFournisseurComponent implements OnInit {
   public UpdateFournisseur(fournisseur: Fournisseur): void {
     this.fournisseurservic.updateFournisseur(fournisseur).subscribe(
       (response: Fournisseur) => {
-        console.log(response);
-        this.fournisseurservic.getFournisseurs();
+       // console.log(response);
+        //this.fournisseurservic.getFournisseurs();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
