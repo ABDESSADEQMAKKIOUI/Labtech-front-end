@@ -15,7 +15,6 @@ import {UpdatePatientComponent} from "./components/patient/update-patient/update
 import {FournisseursComponent} from "./components/fournisseur/fournisseurs/fournisseurs.component";
 import {FournisseurDetailComponent} from "./components/fournisseur/fournisseur-detail/fournisseur-detail.component";
 import {AddFournisseurComponent} from "./components/fournisseur/add-fournisseur/add-fournisseur.component";
-import {PdateFournisseurComponent} from "./components/fournisseur/pdate-fournisseur/pdate-fournisseur.component";
 import {MaterialsComponent} from "./components/material/materials/materials.component";
 import {MaterialDetailComponent} from "./components/material/material-detail/material-detail.component";
 import {AddMaterialComponent} from "./components/material/add-material/add-material.component";
@@ -23,7 +22,6 @@ import {UpdateMaterialComponent} from "./components/material/update-material/upd
 import {NormesComponent} from "./components/norme/normes/normes.component";
 import {NormeDetailsComponent} from "./components/norme/norme-details/norme-details.component";
 import {AddNormeComponent} from "./components/norme/add-norme/add-norme.component";
-import {UpdateNormeComponent} from "./components/norme/update-norme/update-norme.component";
 import {NumerationDetailsComponent} from "./components/numeration/numeration-details/numeration-details.component";
 import {AddNumerationComponent} from "./components/numeration/add-numeration/add-numeration.component";
 import {UpdateNumerationComponent} from "./components/numeration/update-numeration/update-numeration.component";
@@ -35,6 +33,7 @@ import {UpdateUtilisateurComponent} from "./components/utilisateur/update-utilis
 import {UpdateReactifComponent} from "./components/reactif/update-reactif/update-reactif.component";
 import {ReactifDetailComponent} from "./components/reactif/reactif-detail/reactif-detail.component";
 import {ReactifsComponent} from "./components/reactif/reactifs/reactifs.component";
+import {CommonModule} from "@angular/common";
 
 const routes: Routes = [{ path: 'analyses', component: AnalysesComponent },
   { path: 'analyseDetail', component: AnalyseDetailComponent },
@@ -51,7 +50,6 @@ const routes: Routes = [{ path: 'analyses', component: AnalysesComponent },
   { path: 'fournisseurs', component: FournisseursComponent },
   { path: 'fournisseurDetail', component: FournisseurDetailComponent },
   { path: 'addFournisseur', component: AddFournisseurComponent },
-  { path: 'updateFournisseur', component: PdateFournisseurComponent },
   { path: 'materials', component: MaterialsComponent },
   { path: 'materialDetail', component: MaterialDetailComponent },
   { path: 'addMaterial', component: AddMaterialComponent },
@@ -59,7 +57,6 @@ const routes: Routes = [{ path: 'analyses', component: AnalysesComponent },
   { path: 'normes', component: NormesComponent },
   { path: 'normeDetail', component: NormeDetailsComponent },
   { path: 'addNorme', component: AddNormeComponent },
-  { path: 'updateNorme', component: UpdateNormeComponent },
   { path: 'numerationDetail', component: NumerationDetailsComponent },
   { path: 'addNumeration', component: AddNumerationComponent },
   { path: 'updateNumeration', component: UpdateNumerationComponent },
@@ -73,7 +70,7 @@ const routes: Routes = [{ path: 'analyses', component: AnalysesComponent },
   { path: 'reactifs', component: ReactifsComponent }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [CommonModule,RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

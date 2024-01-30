@@ -17,7 +17,6 @@ import { UpdateEchantillonComponent } from './components/echantillon/update-echa
 import { FournisseursComponent } from './components/fournisseur/fournisseurs/fournisseurs.component';
 import { FournisseurDetailComponent } from './components/fournisseur/fournisseur-detail/fournisseur-detail.component';
 import { AddFournisseurComponent } from './components/fournisseur/add-fournisseur/add-fournisseur.component';
-import { PdateFournisseurComponent } from './components/fournisseur/pdate-fournisseur/pdate-fournisseur.component';
 import { UpdateMaterialComponent } from './components/material/update-material/update-material.component';
 import { AddMaterialComponent } from './components/material/add-material/add-material.component';
 import { MaterialsComponent } from './components/material/materials/materials.component';
@@ -25,7 +24,6 @@ import { MaterialDetailComponent } from './components/material/material-detail/m
 import { NormesComponent } from './components/norme/normes/normes.component';
 import { NormeDetailsComponent } from './components/norme/norme-details/norme-details.component';
 import { AddNormeComponent } from './components/norme/add-norme/add-norme.component';
-import { UpdateNormeComponent } from './components/norme/update-norme/update-norme.component';
 import { AddNumerationComponent } from './components/numeration/add-numeration/add-numeration.component';
 import { UpdateNumerationComponent } from './components/numeration/update-numeration/update-numeration.component';
 import { NumerationDetailsComponent } from './components/numeration/numeration-details/numeration-details.component';
@@ -57,7 +55,6 @@ import {FormsModule} from "@angular/forms";
     FournisseursComponent,
     FournisseurDetailComponent,
     AddFournisseurComponent,
-    PdateFournisseurComponent,
     UpdateMaterialComponent,
     AddMaterialComponent,
     MaterialsComponent,
@@ -65,7 +62,6 @@ import {FormsModule} from "@angular/forms";
     NormesComponent,
     NormeDetailsComponent,
     AddNormeComponent,
-    UpdateNormeComponent,
     AddNumerationComponent,
     UpdateNumerationComponent,
     NumerationDetailsComponent,

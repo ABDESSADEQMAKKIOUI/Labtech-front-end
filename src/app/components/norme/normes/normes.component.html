@@ -23,7 +23,7 @@
           <div class="table-responsive table mt-2" id="" role="grid" aria-describedby="dataTable_info">
             <table class="table my-0" id="dataTable">
               <thead>
-              <tr>
+              <tr >
                 <th>Nom</th>
                 <th>valeur max</th>
                 <th>valeur min</th>
@@ -33,36 +33,18 @@
               </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>Airi Satou</td>
-                <td>100<br><br></td>
-                <td>50</td>
-                <td>kg</td>
-                <td><button class="btn btn-primary" type="button">Detaille</button></td>
+              <tr *ngFor="let norme of normes">
+                <td>{{ norme.libelle }}</td>
+                <td>{{ norme.maxValue }}<br><br></td>
+                <td>{{ norme.minValue }}</td>
+                <td>{{ norme.unite }}</td>
+                <td><a class="dropdown-item" routerLink="/normeDetail" ><button class="btn btn-primary" type="button">Detaille</button></a></td>
                 <td>
                   <div class="btn-group"><button class="btn btn-primary" type="button">Action</button><button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" type="button"></button>
-                    <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
+                    <div class="dropdown-menu"><a class="dropdown-item" routerLink="/updateNorme" >Modifier</a><a class="dropdown-item" href="#">suprimer</a></div>
                   </div>
                 </td>
               </tr>
-              <tr>
-                <td>Angelica&nbsp;</td>
-                <td>100</td>
-                <td>50</td>
-                <td>kg<br><br></td>
-                <td><button class="btn btn-primary" type="button">Detaille</button></td>
-                <td>
-                  <div class="btn-group"><button class="btn btn-primary" type="button">Action</button><button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" type="button"></button>
-                    <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-                  </div><br><br><br>
-                </td>
-              </tr>
-              <tr></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr></tr>
               </tbody>
               <tfoot>
               <tr></tr>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Norme} from "../../entities/norme/norme";
+import {NgForm} from "@angular/forms";
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class NormeService {
     return this.http.get<Norme[]>(this.apiUrl);
   }
 
-  addNorme(normeDTO: Norme): Observable<Norme> {
+  addNorme(normeDTO: NgForm): Observable<Norme> {
     return this.http.post<Norme>(this.apiUrl, normeDTO);
   }
 
