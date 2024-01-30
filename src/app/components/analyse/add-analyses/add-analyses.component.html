@@ -1,1 +1,26 @@
-<p>add-analyses works!</p>
+<div class="container">
+  <h2>Ajouter une nouvelle analyse</h2>
+  <div>
+    <label for="idEchantillon">Sélectionnez un échantillon:</label>
+    <select id="idEchantillon" [(ngModel)]="newAnalyse.echantillon.idEchantillon">
+      <option *ngFor="let echantillon of echantillons" [value]="echantillon.idEchantillon">{{ echantillon.patient.nom }}</option>
+    </select>
+  </div>
+  <div>
+    <label for="nomAnalyse">Nom de l'analyse:</label>
+    <input type="text" id="nomAnalyse" [(ngModel)]="newAnalyse.nomAnalyse">
+  </div>
+  <div>
+    <label for="dateDebut">Date de début:</label>
+    <input type="date" id="dateDebut" [(ngModel)]="newAnalyse.dateDebut">
+  </div>
+  <div>
+    <label for="dateFin">Date de fin:</label>
+    <input type="date" id="dateFin" [(ngModel)]="newAnalyse.dateFin">
+  </div>
+  <div>
+    <label for="commentaire">Commentaire:</label>
+    <textarea id="commentaire" [(ngModel)]="newAnalyse.commantaire"></textarea>
+  </div>
+  <button (click)="addAnalyse()">Ajouter</button>
+</div>

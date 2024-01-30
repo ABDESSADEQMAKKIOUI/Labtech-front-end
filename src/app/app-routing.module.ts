@@ -34,15 +34,16 @@ import {UpdateReactifComponent} from "./components/reactif/update-reactif/update
 import {ReactifDetailComponent} from "./components/reactif/reactif-detail/reactif-detail.component";
 import {ReactifsComponent} from "./components/reactif/reactifs/reactifs.component";
 import {CommonModule} from "@angular/common";
+import {NumerationsComponent} from "./components/numeration/numerations/numerations.component";
 
 const routes: Routes = [{ path: 'analyses', component: AnalysesComponent },
-  { path: 'analyseDetail', component: AnalyseDetailComponent },
+  { path: 'analyseDetail/:id', component: AnalyseDetailComponent },
   { path: 'addAnalyse', component: AddAnalysesComponent },
-  { path: 'updateAnalyse', component: UpdateAnalysesComponent },
+  { path: 'updateAnalyse/:id', component: UpdateAnalysesComponent },
   { path: 'echantillons', component: EchantillonsComponent },
   { path: 'addEchantillon', component: AddEchantillonComponent },
-  { path: 'updateEchantillon', component: UpdateEchantillonComponent },
-  { path: 'echantillonsDetail', component: EchantillonDetailComponent },
+  { path: 'updateEchantillon/:id', component: UpdateEchantillonComponent },
+  { path: 'echantillonsDetail/:id', component: EchantillonDetailComponent },
   { path: 'patients', component: PatientsComponent },
   { path: 'patientDetail', component: PatientDetailsComponent },
   { path: 'addPatient', component: AddPatientComponent },
@@ -57,6 +58,7 @@ const routes: Routes = [{ path: 'analyses', component: AnalysesComponent },
   { path: 'normes', component: NormesComponent },
   { path: 'normeDetail', component: NormeDetailsComponent },
   { path: 'addNorme', component: AddNormeComponent },
+  { path: 'numerations', component: NumerationsComponent },
   { path: 'numerationDetail', component: NumerationDetailsComponent },
   { path: 'addNumeration', component: AddNumerationComponent },
   { path: 'updateNumeration', component: UpdateNumerationComponent },

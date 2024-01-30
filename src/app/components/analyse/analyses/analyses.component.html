@@ -7,19 +7,6 @@
           <p class="text-primary m-0 fw-bold">Analyses Info</p>
         </div>
         <div class="card-body">
-          <div class="row">
-            <div class="col-md-6 text-nowrap">
-              <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Show&nbsp;<select class="d-inline-block form-select form-select-sm">
-                <option value="10" selected="">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-              </select>&nbsp;</label></div>
-            </div>
-            <div class="col-md-6">
-              <div class="text-md-end dataTables_filter" id="dataTable_filter"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
-            </div>
-          </div>
           <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
             <table class="table my-0" id="">
               <thead>
@@ -33,36 +20,25 @@
               </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>Airi Satou</td>
-                <td>2008/11/28<br><br></td>
-                <td>2008/11/28</td>
-                <td>commentair</td>
-                <td><button class="btn btn-primary" type="button">Detaille</button></td>
+              <tr *ngFor="let analyse of analyses">
+                <td>{{ analyse.nomAnalyse }}</td>
+                <td>{{ analyse.dateDebut }}</td>
+                <td>{{ analyse.dateFin }}</td>
+                <td>{{ analyse.commantaire }}</td>
                 <td>
-                  <div class="btn-group"><button class="btn btn-primary" type="button">Action</button><button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" type="button"></button>
-                    <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
+                  <a class="btn btn-primary" [routerLink]="['/analyseDetail', analyse.idAnalyse]">Détails</a>
+                </td>
+                <td>
+                  <div class="btn-group">
+                    <button class="btn btn-primary" type="button">Action</button>
+                    <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" type="button"></button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" (click)="deleteAnalyse(analyse.idAnalyse)" href="#">Supprimer</a>
+                      <a class="dropdown-item" [routerLink]="['/updateAnalyse', analyse.idAnalyse]" >Modifier</a>
+                    </div>
                   </div>
                 </td>
               </tr>
-              <tr>
-                <td>Angelica&nbsp;</td>
-                <td>2008/11/28</td>
-                <td>2008/11/28<br><br></td>
-                <td>commentair<br><br></td>
-                <td><button class="btn btn-primary" type="button">Detaille</button></td>
-                <td>
-                  <div class="btn-group"><button class="btn btn-primary" type="button">Action</button><button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" type="button"></button>
-                    <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-                  </div><br><br><br>
-                </td>
-              </tr>
-              <tr></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr></tr>
-              <tr></tr>
               </tbody>
               <tfoot>
               <tr></tr>

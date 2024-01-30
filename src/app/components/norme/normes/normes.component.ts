@@ -12,15 +12,11 @@ public normes : Norme[] =[]  ;
   constructor(private normeservice : NormeService) { }
 
   ngOnInit(): void {
+    this.loadNorme() ;
   }
-  loadFournisseurs(): void {
+  loadNorme(): void {
     this.normeservice.getAllNormes().subscribe(
-      (data) => {
-        this.normes = data;
-      },
-      (error) => {
-        console.error('Error loading fournisseurs:', error);
-      }
+      normes=> this.normes = normes
     );
   }
 }
