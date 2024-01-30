@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Utilisateur} from "../../entities/utilisateur/utilisateur";
+import {NgForm} from "@angular/forms";
+import {Fournisseur} from "../../entities/fournisseur/fournisseur";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UtilisateurService {
 
-  private apiUrl = 'http://localhost:8080/api/v1/utilisateur';
+  private apiUrl = 'http://localhost:8081/api/v1/utilisateur';
 
   constructor(private http: HttpClient) { }
 
@@ -20,7 +22,7 @@ export class UtilisateurService {
     return this.http.get<Utilisateur>(`${this.apiUrl}/${id}`);
   }
 
-  addUser(utilisateurDTO: Utilisateur): Observable<Utilisateur> {
+  adUtilisateur(utilisateurDTO: NgForm): Observable<Utilisateur> {
     return this.http.post<Utilisateur>(this.apiUrl, utilisateurDTO);
   }
 
