@@ -26,7 +26,7 @@ import {NumerationDetailsComponent} from "./components/numeration/numeration-det
 import {AddNumerationComponent} from "./components/numeration/add-numeration/add-numeration.component";
 import {UpdateNumerationComponent} from "./components/numeration/update-numeration/update-numeration.component";
 import {PlanificatientsComponent} from "./components/planification/planificatients/planificatients.component";
-import {UtilisateursComponent} from "./components/utilisateur/utilisateurs/utilisateurs.component";
+import {UtilisateurComponent} from "./components/utilisateur/utilisateurs/utilisateurs.component";
 import {UtilisateurDetailsComponent} from "./components/utilisateur/utilisateur-details/utilisateur-details.component";
 import {AddUtilisateurComponent} from "./components/utilisateur/add-utilisateur/add-utilisateur.component";
 import {UpdateUtilisateurComponent} from "./components/utilisateur/update-utilisateur/update-utilisateur.component";
@@ -63,10 +63,10 @@ const routes: Routes = [{ path: 'analyses', component: AnalysesComponent },
   { path: 'addNumeration', component: AddNumerationComponent },
   { path: 'updateNumeration', component: UpdateNumerationComponent },
   { path: 'planifications', component: PlanificatientsComponent },
-  { path: 'utilisateurs', component: UtilisateursComponent },
+  { path: 'utilisateur', component: UtilisateurComponent },
   { path: 'utilisateurDetail', component: UtilisateurDetailsComponent },
   { path: 'addUtilisateur', component: AddUtilisateurComponent },
-  { path: 'updateUtilisateur', component: UpdateUtilisateurComponent },
+  { path: 'updateUser/:id', component: UpdateUtilisateurComponent },
   { path: 'updateReactif', component: UpdateReactifComponent },
   { path: 'reactifDetail', component: ReactifDetailComponent },
   { path: 'reactifs', component: ReactifsComponent }];

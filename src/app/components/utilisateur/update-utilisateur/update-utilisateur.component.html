@@ -1,1 +1,85 @@
-<p>update-utilisateur works!</p>
+<!-- update-utilisateur.component.html -->
+<section class="update-utilisateur">
+  <div class="container modern-form">
+    <div class="text-center">
+      <h4 style="color: #212529; font-size: 45px;">Modifier utilisateur</h4>
+    </div>
+    <hr class="modern-form__hr" />
+    <div class="modern-form__form-container">
+      <form #updateForm="ngForm" (ngSubmit)="updateUser(updateForm)">
+        <!-- Display existing user data for reference -->
+        <div class="row">
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-r form-group mb-3">
+              <label>Nom:</label>
+              <input class="form-control input input-tr" [(ngModel)]="utilisateur.nom" type="text" name="nom" />
+            </div>
+          </div>
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-l form-group mb-3">
+              <label>Prenom:</label>
+              <input class="form-control input input-tr" [(ngModel)]="utilisateur.prenom" type="text" name="prenom" />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-r form-group mb-3">
+              <label>Adresse:</label>
+              <input class="form-control input input-tr" [(ngModel)]="utilisateur.adresse" type="text" name="adresse" />
+            </div>
+          </div>
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-l form-group mb-3">
+              <label>Telephone:</label>
+              <input class="form-control input input-tr" [(ngModel)]="utilisateur.tel" type="text" name="tel" />
+            </div>
+          </div>
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-l form-group mb-3">
+              <label>Password:</label>
+              <input class="form-control input input-tr" [(ngModel)]="utilisateur.password" type="text" name="password" />
+            </div>
+          </div>
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-l form-group mb-3">
+              <label>Sexe:</label>
+              <input class="form-control input input-tr" [(ngModel)]="utilisateur.sexe" type="text" name="sexe" />
+            </div>
+          </div>
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-l form-group mb-3">
+              <label>Username:</label>
+              <input class="form-control input input-tr" [(ngModel)]="utilisateur.nomUtilisateur" type="text" name="nomUtilisateur" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-l form-group mb-3">
+              <label for="role">Rôle:</label>
+              <select class="form-control" id="role" name="role" [(ngModel)]="utilisateur.role" required>
+                <option value="Technicien" [selected]="utilisateur.role === 'Technicien'">Technicien</option>
+                <option value="Preleveur" [selected]="utilisateur.role === 'Preleveur'">Préleveur</option>
+                <option value="Responsable" [selected]="utilisateur.role === 'Responsable'">Responsable</option>
+              </select>
+            </div>
+          </div>
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-l form-group mb-3">
+              <label for="dateNaissance">Date de Naissance:</label>
+              <input class="form-control input input-tr" id="dateNaissance" [(ngModel)]="utilisateur.dateNaissance" type="date" name="dateNaissance" required />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col text-center">
+            <button class="btn btn-primary submit-now" [disabled]="updateForm.invalid" type="submit">Modifier</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

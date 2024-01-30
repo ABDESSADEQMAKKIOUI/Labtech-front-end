@@ -22,7 +22,7 @@ export class UtilisateurService {
     return this.http.get<Utilisateur>(`${this.apiUrl}/${id}`);
   }
 
-  adUtilisateur(utilisateurDTO: NgForm): Observable<Utilisateur> {
+  addUser(utilisateurDTO: Utilisateur): Observable<Utilisateur> {
     return this.http.post<Utilisateur>(this.apiUrl, utilisateurDTO);
   }
 

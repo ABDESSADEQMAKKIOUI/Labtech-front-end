@@ -10,7 +10,7 @@ import {Planification} from "../../entities/planification/planification";
 })
 export class AnalyseService {
 
-  private apiUrl = 'http://localhost:8080/api/v1/analyse';
+  private apiUrl = 'http://localhost:8081/api/v1/analyse';
 
   constructor(private http: HttpClient) { }
 

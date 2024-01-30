@@ -8,7 +8,7 @@ import {Reactif} from "../../../entities/reactif/reactif";
 })
 export class ReactifService {
 
-  private apiUrl = 'http://localhost:8080/api/v1/Reactif';
+  private apiUrl = 'http://localhost:8081/api/v1/Reactif';
 
   constructor(private http: HttpClient) { }
 

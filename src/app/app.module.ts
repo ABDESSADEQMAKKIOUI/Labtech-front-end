@@ -32,14 +32,14 @@ import { PatientDetailsComponent } from './components/patient/patient-details/pa
 import { AddPatientComponent } from './components/patient/add-patient/add-patient.component';
 import { UpdatePatientComponent } from './components/patient/update-patient/update-patient.component';
 import { PlanificatientsComponent } from './components/planification/planificatients/planificatients.component';
-import { UtilisateursComponent } from './components/utilisateur/utilisateurs/utilisateurs.component';
+import { UtilisateurComponent } from './components/utilisateur/utilisateurs/utilisateurs.component';
 import { UtilisateurDetailsComponent } from './components/utilisateur/utilisateur-details/utilisateur-details.component';
 import { AddUtilisateurComponent } from './components/utilisateur/add-utilisateur/add-utilisateur.component';
 import { UpdateUtilisateurComponent } from './components/utilisateur/update-utilisateur/update-utilisateur.component';
 import { ReactifsComponent } from './components/reactif/reactifs/reactifs.component';
 import { UpdateReactifComponent } from './components/reactif/update-reactif/update-reactif.component';
 import { ReactifDetailComponent } from './components/reactif/reactif-detail/reactif-detail.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NumerationsComponent } from './components/numeration/numerations/numerations.component';
 
 @NgModule({
@@ -71,7 +71,7 @@ import { NumerationsComponent } from './components/numeration/numerations/numera
     AddPatientComponent,
     UpdatePatientComponent,
     PlanificatientsComponent,
-    UtilisateursComponent,
+    UtilisateurComponent,
     UtilisateurDetailsComponent,
     AddUtilisateurComponent,
     UpdateUtilisateurComponent,
@@ -84,7 +84,8 @@ import { NumerationsComponent } from './components/numeration/numerations/numera
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

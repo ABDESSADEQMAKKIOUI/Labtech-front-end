@@ -1,70 +1,36 @@
-<!-- utilisateur.component.html -->
 <div class="d-flex flex-column" id="content-wrapper">
   <div id="content">
     <div class="container-fluid">
-      <h3 class="text-dark mb-4">Utilisateurs</h3>
+      <h3 class="text-dark mb-4">UTILISATEURS</h3>
       <div class="card shadow">
         <div class="card-header py-3">
           <p class="text-primary m-0 fw-bold">Utilisateurs Info</p>
         </div>
         <div class="card-body">
-          <div class="row">
-            <div class="col-md-6 text-nowrap">
-              <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
-                <label class="form-label">Show&nbsp;
-                  <select class="d-inline-block form-select form-select-sm">
-                    <option value="10" selected="">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                  </select>&nbsp;
-                </label>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="text-md-end dataTables_filter" id="dataTable_filter">
-                <label class="form-label">
-                  <input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search">
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class="table-responsive table mt-2" id="" role="grid" aria-describedby="dataTable_info">
-            <table class="table my-0" id="dataTable">
+          <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+            <table class="table my-0" id="">
               <thead>
               <tr>
-                <th>Nom</th>
+                <th>Name</th>
+                <th>Id</th>
+                <th>Email</th>
                 <th>Role</th>
-                <th>Nom Utilisateur</th>
-                <th>Prenom</th>
-                <th>Date Naissance</th>
-                <th>Sexe</th>
-                <th>Adresse</th>
-                <th>Tel</th>
                 <th>Action</th>
               </tr>
               </thead>
               <tbody>
               <tr *ngFor="let utilisateur of utilisateurs">
                 <td>{{ utilisateur.nom }}</td>
-                <td>{{ utilisateur.role }}</td>
+                <td>{{ utilisateur.idUtilisateur }}</td>
                 <td>{{ utilisateur.nomUtilisateur }}</td>
-                <td>{{ utilisateur.prenom }}</td>
-                <td>{{ utilisateur.dateNaissance | date }}</td>
-                <td>{{ utilisateur.sexe }}</td>
-                <td>{{ utilisateur.adresse }}</td>
-                <td>{{ utilisateur.tel }}</td>
+                <td>{{ utilisateur.role }}</td>
                 <td>
-                  <a class="dropdown-item" routerLink="/utilisateurDetail">
-                    <button class="btn btn-primary" type="button">Detaille</button>
-                  </a>
                   <div class="btn-group">
                     <button class="btn btn-primary" type="button">Action</button>
-                    <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
-                            aria-expanded="false" type="button"></button>
+                    <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" type="button"></button>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" routerLink="/updateUtilisateur">Modifier</a>
-                      <a class="dropdown-item" href="#">Supprimer</a>
+                      <a class="dropdown-item" (click)="deleteUser(utilisateur.idUtilisateur)" href="#">Supprimer</a>
+                      <a class="dropdown-item" [routerLink]="['/updateUser', utilisateur.idUtilisateur]" >Modifier</a>
                     </div>
                   </div>
                 </td>
@@ -77,11 +43,17 @@
           </div>
           <div class="row">
             <div class="col-md-6 align-self-center">
-              <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of {{ utilisateurs.length }}</p>
+              <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
             </div>
             <div class="col-md-6">
               <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                <!-- Pagination controls go here if needed -->
+                <ul class="pagination">
+                  <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                </ul>
               </nav>
             </div>
           </div>

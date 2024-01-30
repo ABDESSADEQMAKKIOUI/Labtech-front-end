@@ -7,36 +7,27 @@ import {HttpErrorResponse} from "@angular/common/http";
 @Component({
   selector: 'app-add-utilisateur',
   templateUrl: './add-utilisateur.component.html',
-  styleUrls: ['./add-utilisateur.component.css'] // Corrected CSS file path
+  styleUrls: ['./add-utilisateur.component.html']
 })
 export class AddUtilisateurComponent implements OnInit {
-  utilisateurs: Utilisateur[] = [];
 
-  constructor(private utilisateurService :UtilisateurService) { }
-
-  ngOnInit(): void {
-    this.getUtilisateurs();
+  constructor(private utilisateurService: UtilisateurService) {
   }
 
-  getUtilisateurs(): void {
-    this.utilisateurService.getAllUsers().subscribe(
-      (response: Utilisateur[]) => {
-        this.utilisateurs = response;
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
+  ngOnInit(): void {
   }
 
   addUtilisateur(addForm: NgForm) : void {
-    this.utilisateurService.adUtilisateur(addForm).subscribe(
+    const formData =  addForm.value;
+
+    this.utilisateurService.addUser(addForm.value).subscribe(
       (response: Utilisateur) => {
-        console.log(response);
-        this.getUtilisateurs();
+        console.log('Server response:', response);
+        this.utilisateurService.getAllUsers();
         addForm.reset();
       },
       (error: HttpErrorResponse) => {
+        console.log('Server error:', error);
         alert(error.message);
         addForm.reset();
       }

@@ -7,7 +7,9 @@
     <hr class="modern-form__hr" />
     <div class="modern-form__form-container">
       <form #addForm="ngForm" (ngSubmit)="addUtilisateur(addForm)">
+        <!-- First row -->
         <div class="row">
+          <!-- Nom input -->
           <div class="col col-contact">
             <div class="modern-form__form-group--padding-r form-group mb-3">
               <input class="form-control input input-tr" ngModel type="text" placeholder="Nom" name="nom" />
@@ -16,6 +18,7 @@
               </div>
             </div>
           </div>
+          <!-- Prenom input -->
           <div class="col col-contact">
             <div class="modern-form__form-group--padding-l form-group mb-3">
               <input class="form-control input input-tr" ngModel type="text" placeholder="Prenom" name="prenom" />
@@ -25,7 +28,10 @@
             </div>
           </div>
         </div>
+
+        <!-- Second row -->
         <div class="row">
+          <!-- Adresse input -->
           <div class="col col-contact">
             <div class="modern-form__form-group--padding-r form-group mb-3">
               <input class="form-control input input-tr" ngModel type="text" placeholder="Adresse" name="adresse" />
@@ -34,6 +40,7 @@
               </div>
             </div>
           </div>
+          <!-- Telephone input -->
           <div class="col col-contact">
             <div class="modern-form__form-group--padding-l form-group mb-3">
               <input class="form-control input input-tr" ngModel type="text" placeholder="Telephone" name="tel" />
@@ -42,8 +49,63 @@
               </div>
             </div>
           </div>
+          <!-- Password input -->
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-l form-group mb-3">
+              <input class="form-control input input-tr" ngModel type="text" placeholder="Password" name="password" />
+              <div class="line-box">
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Sexe input -->
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-l form-group mb-3">
+              <input class="form-control input input-tr" ngModel type="text" placeholder="Sexe" name="sexe" />
+              <div class="line-box">
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Username input -->
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-l form-group mb-3">
+              <input class="form-control input input-tr" ngModel type="text" placeholder="Username" name="nomUtilisateur" />
+              <div class="line-box">
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Third row -->
         <div class="row">
+          <!-- Role dropdown -->
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-l form-group mb-3">
+              <label for="role">Rôle:</label>
+              <select class="form-control" id="role" name="role" ngModel required>
+                <option value="Technicien">Technicien</option>
+                <option value="Preleveur">Préleveur</option>
+                <option value="Responsable">Responsable</option>
+              </select>
+            </div>
+          </div>
+          <!-- Date de Naissance input -->
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-l form-group mb-3">
+              <label for="dateNaissance">Date de Naissance:</label>
+              <input class="form-control input input-tr" id="dateNaissance" ngModel type="date" name="dateNaissance" required />
+              <div class="line-box">
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fourth row -->
+        <div class="row">
+          <!-- Submit button -->
           <div class="col text-center">
             <button class="btn btn-primary submit-now" [disabled]="addForm.invalid" type="submit">Ajouter</button>
           </div>

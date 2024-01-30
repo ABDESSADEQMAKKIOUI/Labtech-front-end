@@ -8,7 +8,7 @@ import {Material} from "../../entities/material/material";
 })
 export class MaterialService {
 
-  private apiUrl = 'http://localhost:8080/api/v1/outil';
+  private apiUrl = 'http://localhost:8081/api/v1/outil';
 
   constructor(private http: HttpClient) { }
 

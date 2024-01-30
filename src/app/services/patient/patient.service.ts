@@ -9,7 +9,7 @@ import {NgForm} from "@angular/forms";
 })
 export class PatientService {
 
-  private apiUrl = 'http://localhost:8080/api/v1/patient';
+  private apiUrl = 'http://localhost:8081/api/v1/patient';
 
   constructor(private http: HttpClient) { }
 

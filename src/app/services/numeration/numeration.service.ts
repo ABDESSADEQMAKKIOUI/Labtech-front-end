@@ -8,7 +8,7 @@ import {Numeration} from "../../entities/numeration/numeration";
 })
 export class NumerationService {
 
-  private apiUrl = 'http://localhost:8080/api/v1/numeration';
+  private apiUrl = 'http://localhost:8081/api/v1/numeration';
 
   constructor(private http: HttpClient) { }
 

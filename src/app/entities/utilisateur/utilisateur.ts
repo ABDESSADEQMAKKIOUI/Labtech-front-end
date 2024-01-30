@@ -1,5 +1,5 @@
 export class Utilisateur  {
-  id: number;
+  idUtilisateur: number;
   role: string;
   password: string;
   nomUtilisateur: string;
@@ -15,7 +15,7 @@ export class Utilisateur  {
     this.role = '';
     this.password = '';
     this.nomUtilisateur = '';
-    this.id = 0;
+    this.idUtilisateur = 0;
     this.nom = '';
     this.prenom = '';
     this.dateNaissance = new Date();
