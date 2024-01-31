@@ -21,7 +21,7 @@
             </div>
           </div>
           <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
-            <table class="table my-0" id="dataTable">
+            <table class="table my-0" >
               <thead>
               <tr>
                 <th>Name</th>
@@ -44,7 +44,10 @@
                 <td><button class="btn btn-primary" type="button">Detaille</button></td>
                 <td>
                   <div class="btn-group"><button class="btn btn-primary" type="button">Action</button><button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" type="button"></button>
-                    <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Supprimer</a>
+                      <a class="dropdown-item" [routerLink]="['/updatePatient', patient.id]" >Modifier</a>
+                    </div>
                   </div>
                 </td>
               </tr>

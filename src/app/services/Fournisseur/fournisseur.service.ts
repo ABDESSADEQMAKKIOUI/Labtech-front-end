@@ -21,7 +21,7 @@ export class FournisseurService {
     return this.http.get<Fournisseur>(`${this.apiUrl}/${id}`);
   }
 
-    addFournisseur(fournisseurDTO: NgForm): Observable<Fournisseur> {
+    addFournisseur(fournisseurDTO:  NgForm): Observable<Fournisseur> {
     return this.http.post<Fournisseur>(this.apiUrl, fournisseurDTO);
   }
 

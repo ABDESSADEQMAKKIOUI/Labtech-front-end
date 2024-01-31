@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Patient} from "../../entities/patient/patient";
+import {NgForm} from "@angular/forms";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class PatientService {
     return this.http.get<Patient>(`${this.apiUrl}/${id}`);
   }
 
-  addPatient(patientDTO: Patient): Observable<Patient> {
+    addPatient(patientDTO: Patient): Observable<Patient> {
     return this.http.post<Patient>(this.apiUrl, patientDTO);
   }
 

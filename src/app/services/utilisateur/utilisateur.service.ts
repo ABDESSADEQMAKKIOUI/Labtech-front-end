@@ -10,7 +10,7 @@ import {Fournisseur} from "../../entities/fournisseur/fournisseur";
 })
 export class UtilisateurService {
 
-  private apiUrl = 'http://localhost:8081/api/v1/utilisateur';
+  private apiUrl = 'http://localhost:8080/api/v1/utilisateur';
 
   constructor(private http: HttpClient) { }
 

@@ -13,11 +13,12 @@ export class PatientsComponent implements OnInit {
   patients:Patient[]=[];
 
   ngOnInit(): void {
+    this.loadpatient();
   }
 
   loadpatient():void{
-    this.patientService.getAllPatients().subscribe(  (data) => {
-      this.patients = data;
+    this.patientService.getAllPatients().subscribe(  (response) => {
+      this.patients = response;
     },
     (error) => {
       console.error('Error loading patient:', error);
