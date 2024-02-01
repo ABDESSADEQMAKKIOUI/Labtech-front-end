@@ -4,6 +4,8 @@ import {Echantillon} from "../../../entities/echantillon/echantillon";
 import {AnalyseService} from "../../../services/analyse/analyse.service";
 import {EchantillonService} from "../../../services/echantillon/echantillon.service";
 import {Router} from "@angular/router";
+import {Reactif} from "../../../entities/reactif/reactif";
+import {ReactifService} from "../../../services/reactif/reactif/reactif.service";
 
 @Component({
   selector: 'app-add-analyses',
@@ -12,32 +14,64 @@ import {Router} from "@angular/router";
 })
 export class AddAnalysesComponent implements OnInit {
 
-  newAnalyse: Analyse = new Analyse();
-  echantillons: Echantillon[] =[];
+  echantillons: Echantillon[];
+  selectedEchantillonId: number;
+  reactifs: Reactif[];
+  selectedReactifs: { reactif: Reactif, quantite: number }[] = [];
+  nouvelleAnalyse: Analyse = new Analyse();
 
   constructor(
     private analyseService: AnalyseService,
     private echantillonService: EchantillonService,
-    private router: Router
+    private reactifService: ReactifService
   ) { }
 
   ngOnInit(): void {
-    this.getEchantillons();
+    this.loadEchantillons();
+    this.loadReactifs();
   }
 
-  getEchantillons(): void {
+  loadEchantillons(): void {
     this.echantillonService.getEchantillons()
-      .subscribe(echantillons => this.echantillons = echantillons);
+      .subscribe(echantillons => {
+        this.echantillons = echantillons;
+      });
   }
 
-  addAnalyse(): void {
-    this.analyseService.addAnalysis(this.newAnalyse.echantillon.idEchantillon)
-      .subscribe((analyse: Analyse) => {
-        console.log('Analyse ajoutée avec succès:', analyse);
-        this.router.navigate(['/analyseDetail', analyse.idAnalyse]);
-      }, error => {
-        console.error('Erreur lors de l\'ajout de l\'analyse:', error);
+  loadReactifs(): void {
+    this.reactifService.getAllReactifs()
+      .subscribe(reactifs => {
+        this.reactifs = reactifs;
       });
+  }
+
+  addReactif(): void {
+    this.selectedReactifs.push({ reactif: null, quantite: 0 });
+  }
+
+  removeReactif(index: number): void {
+    this.selectedReactifs.splice(index, 1);
+  }
+
+  saveAnalyse(): void {
+    this.nouvelleAnalyse.echantillon = { idEchantillon: this.selectedEchantillonId } as Echantillon;
+    this.nouvelleAnalyse.reactifAnalyseList = this.selectedReactifs.map(item => ({
+      reactif: item.reactif,
+      quantite: item.quantite
+    }));
+
+    this.analyseService.addAnalysis(this.nouvelleAnalyse)
+      .subscribe(
+        response => {
+          console.log('Analyse ajoutée avec succès : ', response);
+          this.nouvelleAnalyse = new Analyse();
+          this.selectedEchantillonId = null;
+          this.selectedReactifs = [];
+        },
+        error => {
+          console.error('Erreur lors de l\'ajout de l\'analyse : ', error);
+        }
+      );
   }
 
 }
