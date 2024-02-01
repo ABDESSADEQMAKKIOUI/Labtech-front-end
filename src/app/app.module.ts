@@ -41,7 +41,7 @@ import { UpdateReactifComponent } from './components/reactif/update-reactif/upda
 import { ReactifDetailComponent } from './components/reactif/reactif-detail/reactif-detail.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NumerationsComponent } from './components/numeration/numerations/numerations.component';
-
+import { AddReactifComponent } from './components/reactif/add-reactif/add-reactif.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,7 +78,8 @@ import { NumerationsComponent } from './components/numeration/numerations/numera
     ReactifsComponent,
     UpdateReactifComponent,
     ReactifDetailComponent,
-    NumerationsComponent
+    NumerationsComponent,
+    AddReactifComponent
   ],
     imports: [
         BrowserModule,

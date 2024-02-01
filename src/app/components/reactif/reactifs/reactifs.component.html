@@ -1,1 +1,69 @@
-<p>reactifs works!</p>
+<div class="d-flex flex-column" id="content-wrapper">
+  <div id="content">
+    <div class="container-fluid">
+      <h3 class="text-dark mb-4">Reactifs</h3>
+      <div class="card shadow">
+        <div class="card-header py-3">
+          <button routerLink="/addReactif" class="btn btn-primary mb-3">Ajouter Nouveau Reactif</button>
+          <p class="text-primary m-0 fw-bold">Reactifs Informations</p>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+            <table class="table my-0" id="">
+              <thead>
+              <tr>
+                <th>id</th>
+                <th>nom</th>
+                <th>description</th>
+                <th>dateExpiration</th>
+                <th>quantite</th>
+                <th>fournisseur</th>
+
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let reactif of reactifs">
+                <td>{{ reactif.idReactif }}</td>
+                <td>{{ reactif.nom }}</td>
+                <td>{{ reactif.description }}</td>
+                <td>{{ reactif.dateExpiration }}</td>
+                <td>{{ reactif.quantite}}</td>
+                <td>{{ reactif.fournisseur }}</td>
+                <td>
+                  <div class="btn-group">
+                    <button class="btn btn-primary" type="button">Action</button>
+                    <button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" type="button"></button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" (click)="deleteReactif(reactif.idReactif)" href="#">Supprimer</a>
+                      <a class="dropdown-item" [routerLink]="['/updateReactif', reactif.idReactif]" >Modifier</a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+              <tfoot>
+              <tr></tr>
+              </tfoot>
+            </table>
+          </div>
+          <div class="row">
+            <div class="col-md-6 align-self-center">
+              <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
+            </div>
+            <div class="col-md-6">
+              <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                <ul class="pagination">
+                  <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
