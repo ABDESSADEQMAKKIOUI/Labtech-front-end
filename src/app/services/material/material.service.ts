@@ -24,6 +24,10 @@ export class MaterialService {
     return this.http.put<Material>(this.apiUrl, outilDTO);
   }
 
+  getOutilByID(id: number): Observable<Material> {
+    return this.http.get<Material>(`${this.apiUrl}/${id}`);
+  }
+
   deleteOutil(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }

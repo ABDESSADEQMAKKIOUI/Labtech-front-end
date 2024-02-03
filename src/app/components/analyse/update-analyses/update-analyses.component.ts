@@ -10,33 +10,40 @@ import {AnalyseService} from "../../../services/analyse/analyse.service";
 })
 export class UpdateAnalysesComponent implements OnInit {
 
-  analyse: Analyse=new Analyse();
-  id: number =0;
+  analyse: Analyse;
+  idAnalyse: number;
 
   constructor(
+    private analyseService: AnalyseService,
     private route: ActivatedRoute,
-    private router: Router,
-    private analyseService: AnalyseService
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    // @ts-ignore
-    this.id = +this.route.snapshot.paramMap.get('id');
-    this.getAnalyse();
-  }
-
-  getAnalyse(): void {
-    this.analyseService.getAnalysisById(this.id)
-      .subscribe(analyse => this.analyse = analyse);
+    this.analyse = new Analyse();
+    this.idAnalyse = this.route.snapshot.params['id'];
+    this.analyseService.getAnalysisById(this.idAnalyse)
+      .subscribe(data => {
+        console.log(data);
+        this.analyse = data;
+      }, error => console.log(error));
   }
 
   updateAnalyse(): void {
     this.analyseService.updateAnalysis(this.analyse)
-      .subscribe(() => {
-        console.log('Analyse mise à jour avec succès.');
-        // Rediriger vers la liste des analyses ou une autre page après la mise à jour
-        this.router.navigate(['/liste-analyses']);
-      });
+      .subscribe(data => {
+        console.log(data);
+        this.analyse = new Analyse();
+        this.gotoList();
+      }, error => console.log(error));
+  }
+
+  onSubmit(): void {
+    this.updateAnalyse();
+  }
+
+  gotoList(): void {
+    this.router.navigate(['/analyses']);
   }
 
 }

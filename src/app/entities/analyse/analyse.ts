@@ -1,5 +1,6 @@
 import {Echantillon} from "../echantillon/echantillon";
 import {Numeration} from "../numeration/numeration";
+import {Reactif} from "../reactif/reactif";
 
 export class Analyse {
   idAnalyse: number;
@@ -10,6 +11,7 @@ export class Analyse {
   commantaire: string;
   numerations: Numeration[];
   deleted: boolean;
+  reactifAnalyseList: { reactif: Reactif; quantite: number }[];
 
   constructor() {
     // Initialize your properties if needed

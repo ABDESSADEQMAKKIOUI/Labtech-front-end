@@ -22,7 +22,7 @@ export class AnalyseService {
     return this.http.get<Analyse>(`${this.apiUrl}/${id}`);
   }
 
-  addAnalysis(idEchantillon: number): Observable<Analyse> {
+    addAnalysis(idEchantillon: Analyse): Observable<Analyse> {
     return this.http.get<Analyse>(`${this.apiUrl}/echantillon/${idEchantillon}`);
   }
 

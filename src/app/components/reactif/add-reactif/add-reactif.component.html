@@ -1,0 +1,71 @@
+<section class="getintouch">
+  <div class="container modern-form">
+    <div class="text-center">
+      <h4 style="color: #212529;font-size: 45px;">Ajouter Reactoif </h4>
+    </div>
+    <hr class="modern-form__hr" />
+    <div class="modern-form__form-container">
+      <form #addForm="ngForm" (ngSubmit)="addReactif(addForm)">
+        <div class="row">
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-r form-group mb-3"><input class="form-control input input-tr" ngModel type="text" placeholder=" Nom" name="nom" />
+              <div class="line-box">
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-l form-group mb-3"><input class="form-control input input-tr" ngModel type="text" placeholder="Description" name="description" />
+              <div class="line-box">
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="row">
+            <div class="col col-contact">
+              <div class="modern-form__form-group--padding-l form-group mb-3"><input class="form-control input input-tr" ngModel type="text" placeholder="Adresse" name="adresse" />
+                <div class="line-box">
+                  <div class="line"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-contact">
+              <div class="modern-form__form-group--padding-l form-group mb-3"><input class="form-control input input-tr" ngModel type="number" placeholder="Quantite" name="quantite" />
+                <div class="line-box">
+                  <div class="line"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-r form-group mb-3"><input class="form-control input input-tr" ngModel type="date" placeholder="Date d'expiration " name="dateExpiration" />
+              <div class="line-box">
+                <div class="line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-r form-group mb-3">
+              <label for="fournisseur">Fournisseur:</label>
+              <select class="form-control" id="fournisseur" name="fournisseurId" ngModel required>
+                <option *ngFor="let fournisseur of fournisseurs" [value]="fournisseur.idFournisseur">{{ fournisseur.nom }}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center"><button class="btn btn-primary submit-now" [disabled]="addForm.invalid" type="submit">Ajouter</button></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+

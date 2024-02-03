@@ -24,7 +24,7 @@ export class ReactifService {
     return this.http.post<Reactif>(this.apiUrl, reactifDTO);
   }
 
-  updateReactif(reactifDTO: Reactif): Observable<Reactif> {
+  updateReactif(id: number, reactifDTO: Reactif): Observable<Reactif> {
     return this.http.put<Reactif>(this.apiUrl, reactifDTO);
   }
 

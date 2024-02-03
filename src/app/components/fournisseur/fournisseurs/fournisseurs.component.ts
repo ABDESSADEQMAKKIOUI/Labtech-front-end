@@ -12,6 +12,7 @@ export class FournisseursComponent implements OnInit {
   constructor(private fournisseurService: FournisseurService) { }
   fournisseurs: Fournisseur[] = [];
   ngOnInit(): void {
+    this.loadFournisseurs();
   }
   loadFournisseurs(): void {
     this.fournisseurService.getFournisseurs().subscribe(

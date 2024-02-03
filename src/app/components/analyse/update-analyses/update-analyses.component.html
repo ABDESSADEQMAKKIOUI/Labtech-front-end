@@ -1,21 +1,26 @@
 <div class="container">
-  <h2>Mise à jour de l'analyse</h2>
-  <div>
-    <label>Nom de l'analyse:</label>
-    <input [(ngModel)]="analyse.nomAnalyse" placeholder="Nom de l'analyse"/>
+  <div class="card">
+    <h3 class="card-header">Mise à jour de l'analyse</h3>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="nomAnalyse">Nom de l'analyse :</label>
+          <input type="text" class="form-control" id="nomAnalyse" name="nomAnalyse" [(ngModel)]="analyse.nomAnalyse" required>
+        </div>
+        <div class="form-group">
+          <label for="dateDebut">Date de début :</label>
+          <input type="date" class="form-control" id="dateDebut" name="dateDebut" [(ngModel)]="analyse.dateDebut" required>
+        </div>
+        <div class="form-group">
+          <label for="dateFin">Date de fin :</label>
+          <input type="date" class="form-control" id="dateFin" name="dateFin" [(ngModel)]="analyse.dateFin" required>
+        </div>
+        <div class="form-group">
+          <label for="commentaire">Commentaire :</label>
+          <textarea class="form-control" id="commentaire" name="commentaire" [(ngModel)]="analyse.commantaire"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+      </form>
+    </div>
   </div>
-  <div>
-    <label>Date de début:</label>
-    <input type="date" [(ngModel)]="analyse.dateDebut"/>
-  </div>
-  <div>
-    <label>Date de fin:</label>
-    <input type="date" [(ngModel)]="analyse.dateFin"/>
-  </div>
-  <div>
-    <label>Commentaire:</label>
-    <textarea [(ngModel)]="analyse.commantaire" placeholder="Commentaire"></textarea>
-  </div>
-  <!-- Ajoutez d'autres champs pour la mise à jour selon vos besoins -->
-  <button (click)="updateAnalyse()">Mettre à jour</button>
 </div>

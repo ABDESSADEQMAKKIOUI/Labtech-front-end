@@ -1,1 +1,42 @@
-<p>update-material works!</p>
+<!-- update-utilisateur.component.html -->
+<section class="update-utilisateur">
+  <div class="container modern-form">
+    <div class="text-center">
+      <h4 style="color: #212529; font-size: 45px;">Modifier un materiel </h4>
+    </div>
+    <hr class="modern-form__hr" />
+    <div class="modern-form__form-container">
+      <form #updateForm="ngForm" (ngSubmit)="updateMateriel(updateForm)">
+        <!-- Display existing user data for reference -->
+        <div class="row">
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-r form-group mb-3">
+              <label>Nom:</label>
+              <input class="form-control input input-tr" [(ngModel)]="material.libelle" type="text" name="nom" />
+            </div>k
+          </div>
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-l form-group mb-3">
+              <label>Prenom:</label>
+              <input class="form-control input input-tr" [(ngModel)]="material.fournisseur" type="text" name="prenom" />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col col-contact">
+            <div class="modern-form__form-group--padding-r form-group mb-3">
+              <label>Quantité:</label>
+              <input class="form-control input input-tr" [(ngModel)]="material.quantite" type="text" name="quantite" />
+            </div>
+          </div>
+        <div class="row">
+          <div class="col text-center">
+            <button class="btn btn-primary submit-now" [disabled]="updateForm.invalid" type="submit">Modifier</button>
+          </div>
+        </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

@@ -17,7 +17,7 @@ export class AddNormeComponent implements OnInit {
   ngOnInit(): void {
   }
   addNorme(addForm: NgForm) : void {
-    this.normeservice.addNorme(addForm).subscribe(
+    this.normeservice.addNorme(addForm.value).subscribe(
       (response: Norme) => {
         console.log(response);
         this.normeservice.getAllNormes();

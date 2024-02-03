@@ -35,7 +35,7 @@ import {ReactifDetailComponent} from "./components/reactif/reactif-detail/reacti
 import {ReactifsComponent} from "./components/reactif/reactifs/reactifs.component";
 import {CommonModule} from "@angular/common";
 import {NumerationsComponent} from "./components/numeration/numerations/numerations.component";
-
+import {AddReactifComponent} from "./components/reactif/add-reactif/add-reactif.component";
 const routes: Routes = [{ path: 'analyses', component: AnalysesComponent },
   { path: 'analyseDetail/:id', component: AnalyseDetailComponent },
   { path: 'addAnalyse', component: AddAnalysesComponent },
@@ -54,7 +54,7 @@ const routes: Routes = [{ path: 'analyses', component: AnalysesComponent },
   { path: 'materials', component: MaterialsComponent },
   { path: 'materialDetail', component: MaterialDetailComponent },
   { path: 'addMaterial', component: AddMaterialComponent },
-  { path: 'updateMaterial', component: UpdateMaterialComponent },
+  { path: 'updateMaterial/:id', component: UpdateMaterialComponent },
   { path: 'normes', component: NormesComponent },
   { path: 'normeDetail', component: NormeDetailsComponent },
   { path: 'addNorme', component: AddNormeComponent },
@@ -63,13 +63,14 @@ const routes: Routes = [{ path: 'analyses', component: AnalysesComponent },
   { path: 'addNumeration', component: AddNumerationComponent },
   { path: 'updateNumeration', component: UpdateNumerationComponent },
   { path: 'planifications', component: PlanificatientsComponent },
-  { path: 'utilisateur', component: UtilisateurComponent },
+  { path: 'utilisateurs', component: UtilisateurComponent },
   { path: 'utilisateurDetail', component: UtilisateurDetailsComponent },
   { path: 'addUtilisateur', component: AddUtilisateurComponent },
   { path: 'updateUser/:id', component: UpdateUtilisateurComponent },
-  { path: 'updateReactif', component: UpdateReactifComponent },
+  { path: 'updateReactif/:id', component: UpdateReactifComponent },
   { path: 'reactifDetail', component: ReactifDetailComponent },
-  { path: 'reactifs', component: ReactifsComponent }];
+  { path: 'reactifs', component: ReactifsComponent },
+  { path: 'addReactif', component: AddReactifComponent }];
 
 @NgModule({
   imports: [CommonModule,RouterModule.forRoot(routes)],

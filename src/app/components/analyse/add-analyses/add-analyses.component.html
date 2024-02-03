@@ -1,26 +1,39 @@
 <div class="container">
   <h2>Ajouter une nouvelle analyse</h2>
-  <div>
-    <label for="idEchantillon">Sélectionnez un échantillon:</label>
-    <select id="idEchantillon" [(ngModel)]="newAnalyse.echantillon.idEchantillon">
-      <option *ngFor="let echantillon of echantillons" [value]="echantillon.idEchantillon">{{ echantillon.patient.nom }}</option>
-    </select>
-  </div>
-  <div>
-    <label for="nomAnalyse">Nom de l'analyse:</label>
-    <input type="text" id="nomAnalyse" [(ngModel)]="newAnalyse.nomAnalyse">
-  </div>
-  <div>
-    <label for="dateDebut">Date de début:</label>
-    <input type="date" id="dateDebut" [(ngModel)]="newAnalyse.dateDebut">
-  </div>
-  <div>
-    <label for="dateFin">Date de fin:</label>
-    <input type="date" id="dateFin" [(ngModel)]="newAnalyse.dateFin">
-  </div>
-  <div>
-    <label for="commentaire">Commentaire:</label>
-    <textarea id="commentaire" [(ngModel)]="newAnalyse.commantaire"></textarea>
-  </div>
-  <button (click)="addAnalyse()">Ajouter</button>
+  <form class="form" (ngSubmit)="saveAnalyse()">
+    <div class="form-group">
+      <label for="echantillonSelect">Sélectionner un échantillon :</label>
+      <select id="echantillonSelect" class="form-control" [(ngModel)]="selectedEchantillonId" (change)="loadReactifs()">
+        <option *ngFor="let echantillon of echantillons" [value]="echantillon.idEchantillon">{{ echantillon.patient.nom }}</option>
+      </select>
+    </div>
+    <div *ngIf="reactifs && reactifs.length > 0">
+      <label >Sélectionner les réactifs :</label>
+      <div *ngFor="let reactifItem of selectedReactifs; let i = index">
+        <select id="reactifSelect{{i}}" class="form-control" [(ngModel)]="reactifItem.reactif" name="reactifSelect{{i}}">
+          <option *ngFor="let reactif of reactifs" [value]="reactif">{{ reactif.nom }}</option>
+        </select>
+        <input type="number" class="form-control" [(ngModel)]="reactifItem.quantite" name="quantite{{i}}" placeholder="Quantité">
+        <button type="button" class="btn btn-danger" (click)="removeReactif(i)">Retirer</button>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="addReactif()">Ajouter un réactif</button>
+    </div>
+    <div class="form-group">
+      <label for="nomAnalyse">Nom de l'analyse :</label>
+      <input type="text" id="nomAnalyse" class="form-control" [(ngModel)]="nouvelleAnalyse.nomAnalyse" name="nomAnalyse" required>
+    </div>
+    <div class="form-group">
+      <label for="dateDebut">Date de début :</label>
+      <input type="date" id="dateDebut" class="form-control" [(ngModel)]="nouvelleAnalyse.dateDebut" name="dateDebut" required>
+    </div>
+    <div class="form-group">
+      <label for="dateFin">Date de fin :</label>
+      <input type="date" id="dateFin" class="form-control" [(ngModel)]="nouvelleAnalyse.dateFin" name="dateFin" required>
+    </div>
+    <div class="form-group">
+      <label for="commentaire">Commentaire :</label>
+      <textarea class="form-control" id="commentaire" [(ngModel)]="nouvelleAnalyse.commantaire" name="commentaire"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Enregistrer</button>
+  </form>
 </div>
