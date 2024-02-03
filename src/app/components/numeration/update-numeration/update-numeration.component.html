@@ -1,1 +1,15 @@
-<p>update-numeration works!</p>
+<div class="container">
+  <h2>Update numeration</h2>
+  <form #updateForm="ngForm" (ngSubmit)="updateNumeration(updateForm)">
+    <div class="form-group">
+      <label for="value">Numeration</label>
+      <input type="text" class="form-control" id="value" [(ngModel)]="numeration.value" name="value">
+    </div>
+    <div class="form-group">
+      <label for="value">Description:</label>
+      <input type="text" class="form-control" id="statut" [(ngModel)]="numeration.statut" name="statut">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>

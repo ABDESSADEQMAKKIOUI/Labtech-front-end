@@ -1,10 +1,10 @@
 <div class="d-flex flex-column" id="content-wrapper">
   <div id="content">
     <div class="container-fluid">
-      <h3 class="text-dark mb-4">NUMERATION</h3>
+      <h3 class="text-dark mb-4">Numerations</h3>
       <div class="card shadow">
         <div class="card-header py-3">
-          <p class="text-primary m-0 fw-bold">Numeations Info</p>
+          <p class="text-primary m-0 fw-bold">Numeration Info</p>
         </div>
         <div class="card-body">
           <div class="row">
@@ -21,39 +21,50 @@
             </div>
           </div>
           <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
-            <table class="table my-0" id="">
+            <table class="table my-0" >
               <thead>
               <tr>
-                <th>#</th>
-                <th>Valeur</th>
-                <th>Status</th>
+                <th>Name</th>
+                <th>Penom</th>
+                <th>date de naissance</th>
+                <th>Tele</th>
+                <th>Adress</th>
                 <th>Show detail</th>
                 <th>Action</th>
               </tr>
               </thead>
               <tbody>
               <tr>
-                <td>Airi Satou</td>
-                <td>100<br><br></td>
-                <td>normal</td>
+              <tr *ngFor="let numeration of numerations">
+                <td>{{ numeration.value }}</td>
+                <td>{{ numeration.statut}}</td>
+                <td>{{  numeration.norme}}</td>
+                <td>{{  numeration.analyse }}</td>
+
                 <td><button class="btn btn-primary" type="button">Detaille</button></td>
                 <td>
                   <div class="btn-group"><button class="btn btn-primary" type="button">Action</button><button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" type="button"></button>
-                    <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Supprimer</a>
+                      <a class="dropdown-item" [routerLink]="['/UpdateNumeration', numeration.idNumeration]" >Modifier</a>
+                    </div>
                   </div>
                 </td>
               </tr>
               <tr>
-                <td>Angelica&nbsp;</td>
-                <td>100</td>
-                <td>normal</td>
-                <td><button class="btn btn-primary" type="button">Detaille</button></td>
-                <td>
-                  <div class="btn-group"><button class="btn btn-primary" type="button">Action</button><button class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" type="button"></button>
-                    <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-                  </div><br><br><br>
-                </td>
+
+
               </tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              </tbody>
+              <tfoot>
+              <tr></tr>
+              </tfoot>
             </table>
           </div>
           <div class="row">
