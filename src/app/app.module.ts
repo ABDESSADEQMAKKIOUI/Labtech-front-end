@@ -42,6 +42,7 @@ import { ReactifDetailComponent } from './components/reactif/reactif-detail/reac
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NumerationsComponent } from './components/numeration/numerations/numerations.component';
 import { AddReactifComponent } from './components/reactif/add-reactif/add-reactif.component';
+import { LoginComponent } from './components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +80,8 @@ import { AddReactifComponent } from './components/reactif/add-reactif/add-reacti
     UpdateReactifComponent,
     ReactifDetailComponent,
     NumerationsComponent,
-    AddReactifComponent
+    AddReactifComponent,
+    LoginComponent
   ],
     imports: [
         BrowserModule,

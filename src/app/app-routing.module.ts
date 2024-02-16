@@ -36,6 +36,7 @@ import {ReactifsComponent} from "./components/reactif/reactifs/reactifs.componen
 import {CommonModule} from "@angular/common";
 import {NumerationsComponent} from "./components/numeration/numerations/numerations.component";
 import {AddReactifComponent} from "./components/reactif/add-reactif/add-reactif.component";
+import {LoginComponent} from "./components/login/login.component";
 const routes: Routes = [{ path: 'analyses', component: AnalysesComponent },
   { path: 'analyseDetail/:id', component: AnalyseDetailComponent },
   { path: 'addAnalyse', component: AddAnalysesComponent },
@@ -70,7 +71,8 @@ const routes: Routes = [{ path: 'analyses', component: AnalysesComponent },
   { path: 'updateReactif/:id', component: UpdateReactifComponent },
   { path: 'reactifDetail', component: ReactifDetailComponent },
   { path: 'reactifs', component: ReactifsComponent },
-  { path: 'addReactif', component: AddReactifComponent }];
+  { path: 'addReactif', component: AddReactifComponent },
+  { path: 'login', component: LoginComponent }];
 
 @NgModule({
   imports: [CommonModule,RouterModule.forRoot(routes)],
